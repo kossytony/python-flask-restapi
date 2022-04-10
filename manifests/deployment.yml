@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: kossytonypythonflaskrestapi 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kossytonypythonflaskrestapi
+  template:
+    metadata:
+      labels:
+        app: kossytonypythonflaskrestapi 
+    spec:
+      containers:
+        - name: kossytonypythonflaskrestapi 
+          image: kossyacr.azurecr.io/kossytonypythonflaskrestapi
+          ports:
+          - containerPort: 5000
